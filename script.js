@@ -15,12 +15,6 @@ let courses = [
 
 let courseList = document.getElementsByClassName("output");
 let enrolled = document.getElementsByClassName("enrolled");
-//  Show the list of courses in the output div elements using for loop
-// for (let i = 0; i < courses.length; i++) {
-//   for (let j = 0; j < courseList.length; j++) {
-//     courseList[j].innerHTML += courses[i] + "<br>";
-//   }
-// }
 
 //  Show the list of courses in the output div elements using forEach loop
 courses.forEach((course) => {
@@ -28,7 +22,9 @@ courses.forEach((course) => {
     courseList[j].innerHTML +=
       "<li class='task'>" +
       course +
-      "<button> Enroll in " +
+      "<button onclick='enrollInCourse(\"" +
+      course +
+      "\")'> Enroll in " +
       course +
       "</button>" +
       "</li>";
@@ -38,29 +34,34 @@ courses.forEach((course) => {
 // List of Courses enrolled
 let enrolledCourses = [];
 
-//  Enroll in a course
-let enroll = document.getElementsByTagName("button");
-for (let i = 0; i < enroll.length; i++) {
-  enroll[i].addEventListener("click", () => {
-    enrolledCourses.push(courses[i]);
-    console.log(enrolledCourses);
-  });
+function enrollInCourse(course) {
+  //   check if the course is already enrolled
+  if (enrolledCourses.includes(course)) {
+    alert("You have already enrolled in " + course);
+    return;
+  }
+  enrolledCourses.push(course);
+  console.log(enrolledCourses);
+  updateEnrolledCourses();
 }
 
-// course.log(enrolledCourses);
-
-enrolledCourses.forEach((course) => {
+function updateEnrolledCourses() {
   for (let j = 0; j < enrolled.length; j++) {
-    enrolled[j].innerHTML +=
-      "<li class='task'>" +
-      course +
-      "<button> Enroll in" +
-      course +
-      "</button>" +
-      "</li>";
-  }
-});
+    enrolled[j].innerHTML = ""; // Clear current list
+    enrolledCourses.forEach((course) => {
+      enrolled[j].innerHTML += "<li class='task'>" + course + "</li>";
+    });
 
-if (enrolledCourses.length > 0) {
-  document.getElementsByClassName("enrolled").style.display = "block";
+    // Show or hide the enrolled courses list based on whether any courses are enrolled
+    if (enrolledCourses.length > 0) {
+      enrolled[j].style.display = "block";
+    } else {
+      enrolled[j].style.display = "none";
+    }
+  }
+}
+
+// Initialize the enrolled courses list as hidden
+for (let j = 0; j < enrolled.length; j++) {
+  enrolled[j].style.display = "none";
 }

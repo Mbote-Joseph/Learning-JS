@@ -1,0 +1,29 @@
+.task {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: #333;
+  position: relative;
+  max-width: 400px;
+}
+
+.task button {
+  position: absolute;
+  top: auto;
+  right: 5px;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #ee7e63;
+  color: #f7f7f7;
+}

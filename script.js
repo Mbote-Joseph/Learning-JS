@@ -26,12 +26,12 @@ let enrolled = document.getElementsByClassName("enrolled");
 courses.forEach((course) => {
   for (let j = 0; j < courseList.length; j++) {
     courseList[j].innerHTML +=
-      "<div class='task'>" +
+      "<li class='task'>" +
       course +
-      "<button> Enroll in" +
+      "<button> Enroll in " +
       course +
       "</button>" +
-      "</div>";
+      "</li>";
   }
 });
 
@@ -52,12 +52,12 @@ for (let i = 0; i < enroll.length; i++) {
 enrolledCourses.forEach((course) => {
   for (let j = 0; j < enrolled.length; j++) {
     enrolled[j].innerHTML +=
-      "<div class='task'>" +
+      "<li class='task'>" +
       course +
       "<button> Enroll in" +
       course +
       "</button>" +
-      "</div>";
+      "</li>";
   }
 });
 

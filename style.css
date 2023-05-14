@@ -1,7 +1,8 @@
 .task {
   background-color: #f1f1f1;
   padding: 20px;
-  margin-top: 5px;
+  margin-top: 15px;
+  margin-left: 15px;
   border-radius: 5px;
   border: 1px solid #ccc;
   overflow-y: auto;
@@ -12,7 +13,7 @@
   word-wrap: break-word;
   color: #333;
   position: relative;
-  max-width: 400px;
+  min-width: 300px;
 }
 
 .task button {
@@ -26,4 +27,13 @@
   cursor: pointer;
   background-color: #ee7e63;
   color: #f7f7f7;
+}
+
+.output {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style: none;
 }

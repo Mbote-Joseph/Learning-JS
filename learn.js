@@ -40,3 +40,17 @@ console.log(`${word.toLowerCase()}`); // Prints the word in lower
 console.log(`${word.charAt(0)}`); // Prints the first character of the word
 console.log(`${word.charAt(word.length - 1)}`); // Prints the last character of the word
 console.log(`${word.slice(1, 4)}`); // Prints the characters from index 1 to 4
+
+date = new Date();
+console.log(date);
+console.log(date.toString());
+console.log(date.getFullYear());
+console.log(date.getMonth() + 1);
+console.log(date.getDate());
+console.log(date.getHours());
+
+console.log(
+  `Todays date is ${date.getDate()}/${
+    date.getMonth() + 1
+  }/${date.getFullYear()}`
+);

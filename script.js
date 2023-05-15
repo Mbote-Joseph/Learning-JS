@@ -38,6 +38,16 @@ function enrollInCourse(course) {
   //   check if the course is already enrolled
   if (enrolledCourses.includes(course)) {
     alert("You have already enrolled in " + course);
+    // create a modal to show the message that the course is already enrolled
+    // write the code to create a modal
+    "<div class='modal'> <div class='modal-content'> <span class='close'>&times;</span> <p>You have already enrolled in " +
+      course +
+      "</p> </div> </div>";
+
+    // Get the modal
+    let modal = document.getElementsByClassName("modal")[0];
+    // modal.style.display = "block";
+
     return;
   }
   enrolledCourses.push(course);

@@ -15,6 +15,9 @@ var details = {
     return this.name;
   },
   getSkills: function () {
+    for (let skill in this.skills) {
+      console.log(`${skill} (${this.skills[skill]})`);
+    }
     return this.skills;
   },
 };

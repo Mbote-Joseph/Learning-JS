@@ -34,4 +34,9 @@ function reverse(a) {
   return string;
 }
 
-console.log(reverse("Zebra"));
+console.log(reverse("Zebra")); // Prints the reversed word
+console.log(`${word.toUpperCase()}`); // Prints the word in uppercase
+console.log(`${word.toLowerCase()}`); // Prints the word in lower
+console.log(`${word.charAt(0)}`); // Prints the first character of the word
+console.log(`${word.charAt(word.length - 1)}`); // Prints the last character of the word
+console.log(`${word.slice(1, 4)}`); // Prints the characters from index 1 to 4
